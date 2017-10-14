@@ -1,4 +1,4 @@
-### 问题描述:
+#### 问题描述:
 
 ```js
 ➜  ~ brew cask search qq
@@ -11,7 +11,7 @@ brew cask install qq
  Error: Cask 'qq' definition is invalid: Bad header line: parse failed
  ```
 
-### 解决方案：
+#### 解决方案：
 
 ```js
 brew update; brew cleanup; brew cask cleanup
