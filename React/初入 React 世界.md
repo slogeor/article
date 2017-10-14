@@ -1,12 +1,10 @@
-## 初入 React 世界
-
 ### Virtual DOM
 
 React 把真实的 DOM 树转换成 JavaScript 对象树，这个对象树被称为 Virtual DOM。
 
 每次数据更新后，重新计算 Virtual DOM，并和上一次生成的 Virtual DOM 做对比，对发生变化的部分做批量更新。
 
-React 提供了直观的 `shouldComponentUpdate` 生命周期回调，来减少数据变化后不必要的 Virtual DOM 对比过程。
+React 提供了直观的 `shouldComponentUpdate` 生命周期回调，来减少数据变化后不必要的 Virtual DOM diff 过程。
 
 Virtual DOM 最大的好处在于方便和其他平台集成。
 
@@ -24,7 +22,7 @@ JSX 将 HMTL 语法直接加入到 JavaScript 代码中，再通过翻译器转�
 
 1.定义标签时，只允许被一个标签包裹，因为一个标签会被转译成对应的 React.createElement 调用方法，最外层没有被包裹，显然无法转译成方法调用。
 
-2.JSX里首字母是小写的是DOM元素，而组件元素首字母是大写的。
+2.JSX里首字母是小写的是DOM元素，而首字母是大写的是组件元素。
 
 3.注释需要用 `{/*注释*/}`。
 
@@ -135,7 +133,7 @@ state 的通信集中在组件内部，props 的通信是父组件向子组件�
 
 props 的传递过程，对于 React 组件来说是非常直观的。React 的单向数据流，主要的流动管道就是 props，props 本身是不可变的。
 
-React 为 props 同样提供了默认配置，通过 defaultProps 静态变量的方式来定义。
+React 为 props 提供了默认配置，通过 defaultProps 静态变量的方式来定义。
 
 React.Children 是 React 官方提供的一系列操作 children 的方法。
 

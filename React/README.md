@@ -3,6 +3,4 @@
 ### 2017
 
 * [初入 React 世界](./初入%20React%20世界.md)
-* [Virtual DOM](./Virtual%20DOM.md)
-* [容器组件、展示组件](./容器组件、展示组件.md)
-* [无状态组件](./无状态组件.md)
+* [React组件](./React组件.md)

@@ -1,4 +1,8 @@
-## 容器组件、展示组件
+
+
+
+
+
 
 ### 容器组件 Container Component
 
@@ -44,6 +48,30 @@
 * 展示组件就是你的调色板，可以把他们放到单独的页面
 * 迫使你分离标签，达到更高的可复用性
 
-### 参考链接
 
-* [http://www.jianshu.com/p/6fa2b21f5df3](http://www.jianshu.com/p/6fa2b21f5df3)
+### 无状态组组件
+
+#### 概念
+
+一个组件没有状态，那么组件的输出方法，将完全取决于 props 和 content，只要有相同的 props 和 content，那么组件的输出绝对相同。
+
+```js
+function HelloComponent(props, /* context */) {
+  return <div>Hello {props.name}</div>
+}
+ReactDOM.render(<HelloComponent name="Sebastian" />, mountNode)
+```
+
+##### 优点
+
+* 没有 this 关键字
+* 语法更简洁
+* 占内存更小(class 有 props、content 等诸多属性)，首次 render 性能更好
+* 可以写成无副作用的函数
+* 可扩展性更强(函数的 component、currying 等组合方式，比 class 的 extend 更灵活)
+
+##### 缺点
+
+* 没有生命周期函数，但可以通过高阶组件实现生命周期
+* 没有this
+* 不支持 ref
