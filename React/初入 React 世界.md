@@ -1,4 +1,4 @@
-### Virtual DOM
+#### Virtual DOM
 
 React 把真实的 DOM 树转换成 JavaScript 对象树，这个对象树被称为 Virtual DOM。
 
@@ -8,17 +8,17 @@ React 提供了直观的 `shouldComponentUpdate` 生命周期回调，来减少�
 
 Virtual DOM 最大的好处在于方便和其他平台集成。
 
-### 函数式编程
+#### 函数式编程
 
 函数式编程对应的是声明式编程，它是人类模仿自己逻辑思考方式发明出来的。React 把过去不断重复构建 UI 的过程抽象成组件，且在给定参数的情况下约定渲染对应的 UI 界面。React 能充分利用很多函数式方法减少冗余代码。函数式编程才是 React 的精髓。
 
-### JSX
+#### JSX
 
 在 React 中创建的虚拟元素可以分为两类，DOM 元素(DOM element)与组件元素(component element)，分别对应着原生 DOM 元素和自定义元素。
 
 JSX 将 HMTL 语法直接加入到 JavaScript 代码中，再通过翻译器转换到纯 JavaScript 后由浏览器执行。
 
-#### JSX基本语法
+##### JSX基本语法
 
 1.定义标签时，只允许被一个标签包裹，因为一个标签会被转译成对应的 React.createElement 调用方法，最外层没有被包裹，显然无法转译成方法调用。
 
@@ -46,7 +46,7 @@ const person = React.createElement(
 <div dangerouslySetInnerHTML={{_html: 'cc &copy; 2017'}} />
 ```
 
-### React 组件
+#### React 组件
 
 Web Components 由四个部分组成，HTML Templates、Custom Elements、Shadow DOM、HTML Imports。
 
@@ -57,7 +57,7 @@ Web Components 由四个部分组成，HTML Templates、Custom Elements、Shadow
 
 React 组件基本上由三个部分组成：属性(props)、状态(state)以及生命周期方法。
 
-#### React 组件的构建方法
+##### React 组件的构建方法
 
 1.React.createClass
 
@@ -126,7 +126,7 @@ function Button({ color = 'blue', 'text' = 'Confrim'}) {
 
 无状态函数就是无状态组件。无状态组件只传入 props 和 content 两个参数，不存在 state 和生命周期。无状态组件创建时始终保持一个实例，避免了不必要的检查和内存分配。
 
-### state 和 props
+##### state 和 props
 
 state 的通信集中在组件内部，props 的通信是父组件向子组件的传播。
 
@@ -136,18 +136,18 @@ React 为 props 提供了默认配置，通过 defaultProps 静态变量的方�
 
 React.Children 是 React 官方提供的一系列操作 children 的方法。
 
-#### propTypes
+##### propTypes
 
 propTypes 用于规范 props 的类型与必需的状态。如果组件定义了 propTypes，那么在开发环境下，就会对组件的 props 值的类型做检查。在生产环境下，这是不会去检查的。
 
-### 生命周期
+#### 生命周期
 
 1.组件的挂载
 
 - componentWillMount: 会在 render 方法之前执行，此方法只是执行一次，设置 setState 是没有意义的，初始化 state 可以放在 constructor。
 - componentDidMount: 会在 render 方法之后执行，如果在此方法执行了 setState，组件当然会再次更新，在初始化过程中就渲染了两次组件。
 
- 2.组件的卸载
+2.组件的卸载
 
 - componentWillUnmont: 组件卸载前的状态
 
@@ -163,7 +163,7 @@ propTypes 用于规范 props 的类型与必需的状态。如果组件定义了
 
 如果组件是由父组件更新 props 而更新的，那么在 shouldComponentUpdate 之前会先执行 componentWillReceiveProps 方法。此方法可以作为 React 在 props 传入后，渲染之前 setState 的机会。在此方法中调用 setState 是不会二次渲染的。
 
-### React 与 DOM
+#### React 与 DOM
 
 ReactDOM 提供了三个API，用于操作 DOM
 
@@ -173,7 +173,7 @@ ReactDOM 提供了三个API，用于操作 DOM
 
 - render: 把 React 渲染的 Virtual DOM 渲染到浏览器的 DOM 中
 
-### refs
+#### refs
 
 在组件内，JSX 是不会返回一个组件的实例。它只是一个 ReactElement，只是告诉 React 被挂载的组件应该长什么样。
 
