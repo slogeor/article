@@ -44,35 +44,35 @@ import React from 'react';
 import { render } from 'react-dom';
 
 class SimpleComponent extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: this.props.open,
-        };
-        this.hanleClick = this.handleClick.bind(this);
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: this.props.open,
+    };
+    this.hanleClick = this.handleClick.bind(this);
+  }
 
-    handleClick() {
-        // ...
-    }
+  handleClick() {
+    // ...
+  }
 
-    render() {
-        let open = this.state.open;
-        return (
-            <div onClick={this.handleClick}>
-                hello world
-            </div>
-        );
-    }
+  render() {
+    let open = this.state.open;
+    return (
+      <div onClick={this.handleClick}>
+        hello world
+      </div>
+    );
+  }
 }
 
 SimpleComponent.defaultProps = {
-    open: false,
+  open: false,
 }
 
 render(
-    <SimpleComponent />,
-    document.getElementById('app')
+  <SimpleComponent />,
+  document.getElementById('app')
 )
 ```
 
