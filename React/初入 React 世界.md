@@ -36,8 +36,8 @@ const person = <Person name={window.isLogin ? window.name : ''}>;
 
 // 输出 (JavaScript)
 const person = React.createElement(
-	Person,
-	{name: window.isLogin ? window.name : ''}
+  Person,
+  {name: window.isLogin ? window.name : ''}
 );
 ```
 6.HTML 转义，React 会将所有要展示到 DOM 的字符串转义，防止 XSS。但React 提供了 dangerouslySetInnerHTML 属性，他的作用就是避免 React 转义字符。
@@ -65,21 +65,21 @@ React.createClass 是 React 最传统、也是兼容性最好的方法，在 0.1
 
 ```js
 const Button = React.createClass({
-	getDefaultProps() {
-		retrun {
-			color: 'blue',
-			text: 'Confirm',
-		}
-	},
+  getDefaultProps() {
+    retrun {
+      color: 'blue',
+      text: 'Confirm',
+    }
+  },
 
-	render() {
-		const {color, text} = this.props;
-		return(
-			<button className={`btn btn-${color}`}>
-				<em>{text}<em>
-			</button>
-		);
-	}
+  render() {
+    const {color, text} = this.props;
+    return(
+      <button className={`btn btn-${color}`}>
+        <em>{text}<em>
+      </button>
+    );
+  }
 });
 ```
 
@@ -91,22 +91,22 @@ const Button = React.createClass({
 import React, {Component} from 'react';
 
 class Button extends Component {
-	constructor(props) {
-		super(props);
-	}
+  constructor(props) {
+    super(props);
+  }
 
-	static defaultProps = {
-		color: 'blue',
-		text: 'Confrim',
-	}
+  static defaultProps = {
+    color: 'blue',
+    text: 'Confrim',
+  }
 
-	render() {
-		return(
-			<button className={`btn btn-${color}`}>
-				<em>{text}<em>
-			</button>
-		);
-	}
+  render() {
+    return(
+      <button className={`btn btn-${color}`}>
+        <em>{text}<em>
+      </button>
+    );
+  }
 }
 ```
 
@@ -116,11 +116,11 @@ class Button extends Component {
 
 ```js
 function Button({ color = 'blue', 'text' = 'Confrim'}) {
-	return(
-		<button className={`btn btn-${color}`}>
-			<em>{text}<em>
-		</button>
-	);
+  return(
+    <button className={`btn btn-${color}`}>
+      <em>{text}<em>
+    </button>
+  );
 }
 ```
 
