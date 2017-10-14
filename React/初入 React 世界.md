@@ -74,7 +74,6 @@ const Button = React.createClass({
 
 	render() {
 		const {color, text} = this.props;
-
 		return(
 			<button className={`btn btn-${color}`}>
 				<em>{text}<em>
