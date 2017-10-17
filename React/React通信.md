@@ -117,7 +117,7 @@ class Child extends Component{
 
 #### 兄弟组件间的通信
 
-兄弟组件唯一的关联点，就是拥有相同的父组件，借鉴上面两种关系的通信方法。如果组件 Child_1 向 Child_2 进行通信。可以先通过 Child_1 向 Parent 组件进行通信，然后由 Parent 向 Child_2 组件进行通信。
+兄弟组件唯一的关联点，就是拥有相同的父组件，借鉴上面两种关系的通信方法。如果组件 `Child_1` 向 `Child_2` 进行通信。可以先通过 `Child_1` 向 `Parent` 组件进行通信，然后由 `Parent` 向 `Child_2` 组件进行通信。
 
 这个方法存在这样一个问题，Parent 的 state 发生变化，会触发 Parent 及从属于 Parent 的子组件的 render。一般不建议使用这种方法进行通信，否则会触发子组件频频的 render。
 
