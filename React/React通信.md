@@ -55,7 +55,7 @@ class Child_1_1 extends Component{
 }
 ```
 
-父组件通过 props 向子组件通信是最简单，也是最常用的。父级组件(Parent)的 props 或 state 发生改变，会触发组件本身及其子组件(Child_1、Child_1_1)的 render。
+父组件通过 props 向子组件通信是最简单，也是最常用的。父级组件(Parent)的 props 或 state 发生改变，会触发组件本身及其子组件(Child_1、Child_1_1)的 render。
 
 对于嵌套太深的父级组件向子组件通信，从外到内的通信成本会非常高，通过 props 传递值的优势就不会那么明显。因此建议在开发过程中，减少组件的层次。
 
