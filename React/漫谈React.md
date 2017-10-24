@@ -118,11 +118,11 @@ React 数据流动是单向的，父组件向子组件的通信也是最常见�
 import React, { component } from 'React';
 
 const MyContainer = (WrappedComponent) =>
-	class extend Component {
-		render() {
-			return <WrappedComponent {...this.props} />;
-		}
-	}
+  class extend Component {
+    render() {
+      return <WrappedComponent {...this.props} />;
+    }
+  }
 ```
 
 通过高阶组件来传递 props，这种方法即为属性代理。
@@ -139,11 +139,11 @@ didmount -> HOC didmount -> (HOCs didmount) -> (HOCs will unmount) -> HOC will u
 
 ```js
 const MyContainer = (WrappedComponent) =>
-	class extends WrappedComponent {
-		render() {
-			return super.render();
-		}
-	}
+  class extends WrappedComponent {
+    render() {
+      return super.render();
+    }
+  }
 ```
 高阶组件返回的组件继承于 WrappedComponent。因为被动地继承了 WrappedComponent，所有的调用都会反向。此方法与属性代理不太一样。它通过继承 WrappedComponent 来实现，方法可以通过 super 来顺序调用。因为依赖于继承的机制，HOC 的调用顺序和 `队列` 是一样的。
 
@@ -203,21 +203,21 @@ PureRender 对 object 只作了引用比较，并没有作值比较。对于实�
 
 ```js
 function shallowEqual(obj, newObj) {
-	if (obj === newObj) {
-		return true;
-	}
+  if (obj === newObj) {
+    return true;
+  }
 
-	const objKeys = Object.key(obj);
-	const newObjKeys = Object.key(newObj);
+  const objKeys = Object.key(obj);
+  const newObjKeys = Object.key(newObj);
 
-	if (objKeys.length !== newObjkeys.lenght) {
-		return false;
-	}
+  if (objKeys.length !== newObjkeys.lenght) {
+    return false;
+  }
 
-	// 关键代码，只需关注 props 中每一个是否相等，无需深入判断
-	return objKeys.every(key => {
-		return newObj[key] === obj[key];
-	});
+  // 关键代码，只需关注 props 中每一个是否相等，无需深入判断
+  return objKeys.every(key => {
+    return newObj[key] === obj[key];
+  });
 }
 ```
 
