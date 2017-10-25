@@ -9,3 +9,4 @@
 * [SFC和PureRender](./SFC和PureRender.md)
 * [生命周期](./生命周期.md)
 * [漫谈React](./漫谈React.md)
+* [认识Flux架构模式](./认识Flux架构模式.md)
