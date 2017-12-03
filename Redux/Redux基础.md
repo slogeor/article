@@ -32,8 +32,8 @@ action 是把数据从应用传到 store 的有效载荷，它是 store 数据�
 const ADD_TODO = 'ADD_TODO';
 
 {
-	type: ADD_TODO,
-	text: 'build my frist app'
+  type: ADD_TODO,
+  text: 'build my frist app'
 }
 ```
 
@@ -51,10 +51,10 @@ action 创建函数就是生成 action 的方法。`action` 和 `action 创建�
 
 ```js
 function addTodo(text) {
-	return {
-		type: 'ADD_TODO',
-		text,
-	}
+  return {
+    type: 'ADD_TODO',
+    text,
+  }
 }
 ```
 
@@ -189,31 +189,3 @@ let store = createStore(todoApp)
 ```js
 store.dispatch(addTodo('Learn about actions'))
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
