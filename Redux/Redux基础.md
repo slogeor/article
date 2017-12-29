@@ -8,6 +8,12 @@
 
 一个 reducer，形式为 (state, action) => state 的纯函数，描述了 action 如何把 state 转变成下一个 state。
 
+把要做的修改变成一个普通对象，这个普通对象被叫做 action，而不是直接修改 state。然后编写专门的函数来决定每个 action 如何改变应用的 state，这个函数被叫做 reducer。
+
+### 核心概念
+
+使用普通对象来描述应用的 state，想要更新 state 中的数据，需要发起一个 action。 action 就是一个普通的对象，用来描述发生了什么。为了将 action 和 state 串起来，开发一些函数，这就是 reducer。 reducer 只是接收 state 和 action ，并返回新的 state 函数。
+
 ### 三大原则
 
 #### 单一数据源
@@ -21,6 +27,19 @@
 #### 使用纯函数来执行修改
 
 为了描述 action 如何改变 state tree ，你需要编写 reducer。reducer 只是一些纯函数，它接收先前的 state 和 action，并返回新的 state。
+
+### 单向数据流
+
+* `dispatch` 触发 action 传递数据，应该尽量减少传递的数据
+* `middleware` 在 action 发起之后，到达 reducer 之前执行
+* reducer 根据 action type 返回新的 state
+
+### 主要 API 
+
+* createStore: 创建 store，提供相关操作函数
+* combineReducers: 合并不同的 reducer 函数
+* applyMiddleware: 添加 Redux 中间件
+* bindActionCreators: bind action 到组件中
 
 ### action
 
@@ -189,3 +208,14 @@ let store = createStore(todoApp)
 ```js
 store.dispatch(addTodo('Learn about actions'))
 ```
+
+### 数据流
+
+严格的单向数据流是 Redux 架构的设计核心。这意味着应用中所有的数据都遵循相同的生命周期，这样可以让应用变得更加可预测且容易理解，同时也鼓励做数据范式化。
+
+#### Redux 应用中数据的生命周期遵循下面四个步骤。
+
+- 1.调用 store.dispatch(action)
+- 2.Redux store 调用传入的 reducer 函数
+- 3.跟 reducer 应该把多个子 reducer 输出合并成一个单一的 state 树
+- 4.Redux store 保存了 根 reducer 返回的完整 state 树
