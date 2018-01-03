@@ -19,7 +19,7 @@ const element = (
 
 **2. JSX 也是一个表达式**
 
-babel 编译后，JSX 表达式就变成了常规的 JavaScript 对象。我们可以用 JSX 给变量赋值。
+babel 编译后，JSX 表达式就变成了常规的 JavaScript 对象，我们可以将 JSX 赋给变量。
 
 ```js
 function getGreeting(user) {
@@ -35,7 +35,7 @@ function getGreeting(user) {
 可以用双引号指定字符串字面量作为属性值，也可以使用花括号嵌入 JavaScript 表达式作为属性值
 
 ```js
-const element = <img tabIndex="0" src="user.img" />;
+const element = <img tabIndex="0" src="user.img" user={formatName(user)} />;
 ```
 
 **4.JSX防止注入攻击**
@@ -79,4 +79,4 @@ const element = {
 
 #### 注意
 
-JSX 更接近 JavaScript，所以 React DOM 使用驼峰属性命名约定。
+JSX 更接近 JavaScript，所以 React DOM 使用驼峰命名约定。
