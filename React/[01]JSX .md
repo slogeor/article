@@ -11,9 +11,9 @@ const element = <h1>hello, world</h1>;
 
 ```js
 const element = (
-	<h1>
-		hello, {formatName(user)}!
-	</h1>
+  <h1>
+    hello, {formatName(user)}!
+  </h1>
 );
 ```
 
@@ -23,10 +23,10 @@ babel 编译后，JSX 表达式就变成了常规的 JavaScript 对象，我们�
 
 ```js
 function getGreeting(user) {
-	if (user) {
-		return <h1>Hello, {formatName(user)}!</h1>;
-	}
-	return <h1>Hello, React!</h1>;
+  if (user) {
+    return <h1>Hello, {formatName(user)}!</h1>;
+  }
+  return <h1>Hello, React!</h1>;
 }
 ```
 
@@ -46,9 +46,9 @@ const element = <img tabIndex="0" src="user.img" user={formatName(user)} />;
 
 ```js
 const element = (
-	<h1 className="h1">
-		Hello, {formatName(user)}!
-	</h1>
+  <h1 className="h1">
+    Hello, {formatName(user)}!
+  </h1>
 );
 ```
 
@@ -57,11 +57,11 @@ babel编译后
 ```js
 "use strict";
 var element = React.createElement(
-	"h1",
-	{ className: "h1" },
-	"Hello, ",
-	formatName(user),
-	"!"
+  "h1",
+  { className: "h1" },
+  "Hello, ",
+  formatName(user),
+  "!"
 );
 ```
 

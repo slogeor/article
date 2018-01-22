@@ -34,7 +34,7 @@
 * `middleware` 在 action 发起之后，到达 reducer 之前执行
 * reducer 根据 action type 返回新的 state
 
-### 主要 API 
+### 主要 API
 
 * createStore: 创建 store，提供相关操作函数
 * combineReducers: 合并不同的 reducer 函数
@@ -219,3 +219,7 @@ store.dispatch(addTodo('Learn about actions'))
 - 2.Redux store 调用传入的 reducer 函数
 - 3.跟 reducer 应该把多个子 reducer 输出合并成一个单一的 state 树
 - 4.Redux store 保存了 根 reducer 返回的完整 state 树
+
+#### demo
+
+[react-reudx-todo](https://github.com/slogeor/react/tree/master/example/Redux/03.react-reudx-todo)
