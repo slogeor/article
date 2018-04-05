@@ -1,3 +1,19 @@
+#### 判断数组的方法
+
+```js
+// 方法1
+Array.isArray([]);
+
+// 方法2
+Object.prototype.toString.call([]) === "[object Array]"
+```
+
+#### 类数组转换数据的方法
+
+```js
+Array.prototype.slice.call(arg);
+```
+
 #### slice
 
 ```js
