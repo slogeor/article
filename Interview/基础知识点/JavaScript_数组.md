@@ -14,7 +14,9 @@ arrayObject.slice(start, end)
 arrayObject.splice(index,howmany,item1,.....,itemX)
 
 index: 规定添加/删除项目的位置，使用负数可从数组结尾处规定位置
+
 howmany: 要删除的项目数量, 如果设置为 0，则不会删除项目
+
 item1, ..., itemX: 向数组添加的新项目
 
 返回是数据发生变化的数据
