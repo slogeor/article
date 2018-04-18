@@ -23,7 +23,7 @@
 
 ![content-box.png](../../../image/CSS/content-box.png)
 
-#### content-box
+#### border-box
 
 ```js
 .demo {
